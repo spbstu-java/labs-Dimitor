@@ -9,20 +9,20 @@ public class Hero {
 
     public void setMovementStrategy(MovementStrategy strategy) {
         this.movementStrategy = strategy;
-        System.out.println("Now using: " + strategy.getStrategyName());
+    System.out.println("Теперь используется: " + strategy.getStrategyName());
     }
 
     public void moveTo(String destination) {
         if (currentLocation.equals(destination)) {
-            System.out.println("Already at " + destination);
+            System.out.println("Уже в локации " + destination);
             return;
         }
 
-        System.out.println("\n--- Movement started ---");
+        System.out.println("\n--- Перемещение началось ---");
         movementStrategy.move(currentLocation, destination);
         currentLocation = destination;
-        System.out.println("Successfully arrived at " + destination);
-        System.out.println("--- Movement finished ---\n");
+        System.out.println("Успешно прибыли в " + destination);
+        System.out.println("--- Перемещение завершено ---\n");
     }
 
     public String getCurrentLocation() {

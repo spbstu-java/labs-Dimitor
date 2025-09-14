@@ -1,17 +1,17 @@
 public class HorseRidingStrategy implements MovementStrategy {
 
     public void move(String from, String to) {
-        System.out.println("Riding horse from " + from + " to " + to);
-        System.out.println("   Fast and elegant...");
+        System.out.println("Едем верхом из " + from + " в " + to);
+        System.out.println("   Быстро и элегантно...");
         try {
             Thread.sleep(600);
-            System.out.println("   Horse arrived!");
+            System.out.println("   Лошадь прибыла!");
         } catch (InterruptedException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 
     public String getStrategyName() {
-        return "Horse riding";
+        return "Верхом на лошади";
     }
 }

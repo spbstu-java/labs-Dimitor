@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static Hero hero = new Hero("Hero", "Village");
+    private static Hero hero = new Hero("Герой", "Деревня");
 
     public static void main(String[] args) {
-        System.out.println("==============================");
-        System.out.println("STRATEGY PATTERN DEMO");
-        System.out.println("==============================\n");
+    System.out.println("==============================");
+    System.out.println("ДЕМОНСТРАЦИЯ ПАТТЕРНА STRATEGY");
+    System.out.println("==============================\n");
 
         showGameLoop();
     }
@@ -31,21 +31,21 @@ public class Main {
                     break;
                 case 4:
                     playing = false;
-                    System.out.println("Thanks for playing! Goodbye!");
+                    System.out.println("Спасибо за игру! До свидания!");
                     break;
                 default:
-                    System.out.println("Invalid choice. Try again.");
+                    System.out.println("Неверный выбор. Попробуйте снова.");
             }
         }
     }
 
     private static void showMainMenu() {
-        System.out.println("\n=== MAIN MENU ===");
-        System.out.println("1. Change movement strategy");
-        System.out.println("2. Move to location");
-        System.out.println("3. Show hero status");
-        System.out.println("4. Exit");
-        System.out.print("Choose action (1-4): ");
+        System.out.println("\n=== ГЛАВНОЕ МЕНЮ ===");
+        System.out.println("1. Сменить стратегию передвижения");
+        System.out.println("2. Переместиться в локацию");
+        System.out.println("3. Показать статус героя");
+        System.out.println("4. Выход");
+        System.out.print("Выберите действие (1-4): ");
     }
 
     private static int getUserChoice() {
@@ -53,12 +53,12 @@ public class Main {
     }
 
     private static void changeMovementStrategy() {
-        System.out.println("\n=== CHOOSE MOVEMENT STRATEGY ===");
-        System.out.println("1. Walking");
-        System.out.println("2. Horse riding");
-        System.out.println("3. Flying");
-        System.out.println("4. Teleportation");
-        System.out.print("Choose strategy (1-4): ");
+    System.out.println("\n=== ВЫБОР СТРАТЕГИИ ПЕРЕДВИЖЕНИЯ ===");
+    System.out.println("1. Пешком");
+    System.out.println("2. Верхом на лошади");
+    System.out.println("3. Полёт");
+    System.out.println("4. Телепортация");
+    System.out.print("Выберите стратегию (1-4): ");
 
         int choice = getUserChoice();
         MovementStrategy newStrategy = null;
@@ -77,7 +77,7 @@ public class Main {
                 newStrategy = new TeleportationStrategy();
                 break;
             default:
-                System.out.println("Invalid choice.");
+        System.out.println("Неверный выбор.");
                 return;
         }
 
@@ -85,31 +85,31 @@ public class Main {
     }
 
     private static void moveToLocation() {
-        System.out.println("\n=== CHOOSE DESTINATION ===");
-        System.out.println("1. Village");
-        System.out.println("2. Forest");
-        System.out.println("3. Mountain");
-        System.out.println("4. Castle");
-        System.out.print("Choose destination (1-4): ");
+    System.out.println("\n=== ВЫБОР ЛОКАЦИИ ===");
+    System.out.println("1. Деревня");
+    System.out.println("2. Лес");
+    System.out.println("3. Гора");
+    System.out.println("4. Замок");
+    System.out.print("Выберите локацию (1-4): ");
 
         int choice = getUserChoice();
         String destination = null;
 
         switch (choice) {
             case 1:
-                destination = "Village";
+                destination = "Деревня";
                 break;
             case 2:
-                destination = "Forest";
+                destination = "Лес";
                 break;
             case 3:
-                destination = "Mountain";
+                destination = "Гора";
                 break;
             case 4:
-                destination = "Castle";
+                destination = "Замок";
                 break;
             default:
-                System.out.println("Invalid choice.");
+                System.out.println("Неверный выбор.");
                 return;
         }
 
@@ -117,8 +117,8 @@ public class Main {
     }
 
     private static void showHeroStatus() {
-        System.out.println("\n=== HERO STATUS ===");
-        System.out.println("Current location: " + hero.getCurrentLocation());
-        System.out.println("Movement strategy: " + hero.getCurrentStrategy().getStrategyName());
+        System.out.println("\n=== СТАТУС ГЕРОЯ ===");
+        System.out.println("Текущая локация: " + hero.getCurrentLocation());
+        System.out.println("Стратегия передвижения: " + hero.getCurrentStrategy().getStrategyName());
     }
 }

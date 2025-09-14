@@ -1,12 +1,12 @@
 public class TeleportationStrategy implements MovementStrategy {
 
     public void move(String from, String to) {
-        System.out.println("Teleporting from " + from + " to " + to);
-        System.out.println("   *FLASH*");
-        System.out.println("   Instantly appeared!");
+        System.out.println("Телепортируемся из " + from + " в " + to);
+        System.out.println("   *ВЖУХ*");
+        System.out.println("   Добрались мгновенно!");
     }
 
     public String getStrategyName() {
-        return "Teleportation";
+        return "Телепортация";
     }
 }

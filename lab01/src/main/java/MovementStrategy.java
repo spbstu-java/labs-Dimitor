@@ -1,14 +1,14 @@
 public interface MovementStrategy {
     /**
-     * Execute movement between two points
-     * @param from starting point
-     * @param to destination point
+     * Выполнить перемещение между двумя точками
+     * @param from точка отправления
+     * @param to точка назначения
      */
     void move(String from, String to);
 
     /**
-     * Returns the name of the movement method
-     * @return strategy name
+     * Возвращает название метода передвижения
+     * @return название стратегии
      */
     String getStrategyName();
 }
